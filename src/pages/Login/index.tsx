@@ -27,7 +27,12 @@ const Login = () => {
     defaultValues,
     reValidateMode: "onChange",
   });
-
+  const handleAlert = () =>{
+    alert('Botão funcionou')
+  }
+  console.log("valor do erros", errors);
+  console.log("valor do control",control);
+  console.log("valor do isValid",isValid);
   return (
     <Container>
       <LoginContainer>
@@ -49,7 +54,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button title="Entrar" onClick={handleAlert} disabled={isValid === false}/>
         </Column>
       </LoginContainer>
     </Container>
@@ -57,3 +62,5 @@ const Login = () => {
 };
 
 export default Login;
+
+// disabled={isValid}
